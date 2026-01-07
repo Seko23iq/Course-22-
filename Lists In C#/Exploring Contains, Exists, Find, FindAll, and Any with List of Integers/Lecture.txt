@@ -1,0 +1,92 @@
+Exploring Contains, Exists, Find, FindAll, and Any with List<int> in C#
+In this updated lesson, we extend our exploration to include Find, FindAll, and Any methods, along with Contains and Exists. These methods are instrumental in querying and manipulating data within collections in C#.
+
+Prerequisites
+Basic understanding of C#, collections, and lambda expressions
+Familiarity with List<T> in C#
+Code Setup
+We start with the provided list of integers:
+
+List<int> numbers = new List<int> { 44, 22, -55, 666, 9, -6, 345, 11, 3, 3 };
+
+Exploring Different Methods
+1. Contains Method
+Checks if the list contains a specific element.
+
+Example:
+bool containsNine = numbers.Contains(9);
+Console.WriteLine("List contains 9: " + containsNine);
+
+2. Exists Method
+Checks if any element in the list matches a specified condition.
+
+Example:
+bool existsNegative = numbers.Exists(n => n < 0);
+Console.WriteLine("List contains negative numbers: " + existsNegative);
+
+3. Find Method
+Finds the first element that matches a condition. If no match is found, it returns the default value for the type.
+
+Example:
+int firstNegative = numbers.Find(n => n < 0);
+Console.WriteLine("First negative number: " + firstNegative);
+
+4. FindAll Method
+Retrieves all elements that match a specific condition.
+
+Example:
+List<int> allNegatives = numbers.FindAll(n => n < 0);
+Console.WriteLine("All negative numbers: " + string.Join(", ", allNegatives));
+
+5. Any Method
+Checks if any of the elements in the list satisfy a given condition. It's similar to Exists but is a LINQ method.
+
+Example:
+bool anyGreaterThan100 = numbers.Any(n => n > 100);
+Console.WriteLine("Any numbers greater than 100: " + anyGreaterThan100);
+
+
+Full Example Code
+Here is the complete C# console application with all examples:
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+
+
+class Program
+{
+    static void Main()
+    {
+        // List initialization
+        List<int> numbers = new List<int> { 44, 22, 55, 666, 9, -6, 345, 11, 3, 3 };
+
+
+        // Using Contains
+        Console.WriteLine("List contains 9: " + numbers.Contains(9));
+
+
+        // Using Exists
+        Console.WriteLine("List contains negative numbers: " + numbers.Exists(n => n < 0));
+
+
+        // Using Find
+        Console.WriteLine("First negative number: " + numbers.Find(n => n < 0));
+
+
+        // Using FindAll
+        Console.WriteLine("All negative numbers: " + string.Join(", ", numbers.FindAll(n => n < 0)));
+
+
+        // Using Any
+        Console.WriteLine("Any numbers greater than 100: " + numbers.Any(n => n > 100));
+
+
+        // Waiting for a key press
+        Console.ReadKey();
+    }
+}
+
+
+Conclusion
+This lesson provided an overview of various methods like Contains, Exists, Find, FindAll, and Any for querying List<int> in C#. These methods are crucial for effective data manipulation and querying within collections.
