@@ -1,0 +1,90 @@
+Sorting a List<int> in C# Using Various Methods
+In this lesson, we will focus on sorting a List<int> in C# using different approaches. Sorting is a fundamental operation in many applications where data needs to be organized in a specific order. We will use the provided List<int> and demonstrate various sorting techniques.
+
+Prerequisites
+Basic understanding of C# and collections
+Familiarity with List<T> in C#
+Code Setup
+We start with the provided list of integers:
+
+List<int> numbers = new List<int> { 44, 22, 55, 666, 9, -6, 345, 11, 3, 3 };
+
+Sorting Techniques in C#
+We will explore different ways to sort this list: using built-in methods and implementing custom sorting logic.
+
+1. Default Sorting (Ascending Order)
+The Sort method sorts the elements in ascending order by default.
+
+Example:
+numbers.Sort();
+Console.WriteLine("Sorted in Ascending Order: " + string.Join(", ", numbers));
+
+2. Descending Order Sorting
+To sort the list in descending order, we use Sort followed by Reverse.
+
+Example:
+numbers.Sort();
+numbers.Reverse();
+Console.WriteLine("Sorted in Descending Order: " + string.Join(", ", numbers));
+
+
+3. Sorting Using LINQ
+LINQ provides a more flexible way to sort collections.
+
+Ascending Order:
+var sortedAscending = numbers.OrderBy(n => n);
+Console.WriteLine("Sorted Ascending with LINQ: " + string.Join(", ", sortedAscending));
+
+
+Descending Order:
+var sortedDescending = numbers.OrderByDescending(n => n);
+Console.WriteLine("Sorted Descending with LINQ: " + string.Join(", ", sortedDescending));
+
+
+4. Custom Sorting Logic
+You can define custom sorting logic, for example, sorting based on the absolute values.
+
+Example:
+numbers.Sort((a, b) => Math.Abs(a).CompareTo(Math.Abs(b)));
+Console.WriteLine("Sorted by Absolute Values: " + string.Join(", ", numbers));
+
+
+Full Example Code
+Here is how the entire C# console application might look with these sorting examples:
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+
+
+class Program
+{
+    static void Main()
+    {
+        // List initialization
+        List<int> numbers = new List<int> { 44, 22, 55, 666, 9, -6, 345, 11, 3, 3 };
+
+
+        // Default Sorting (Ascending)
+        numbers.Sort();
+        Console.WriteLine("Sorted in Ascending Order: " + string.Join(", ", numbers));
+
+
+        // Sorting in Descending Order
+        numbers.Reverse();
+        Console.WriteLine("Sorted in Descending Order: " + string.Join(", ", numbers));
+
+
+        // Sorting with LINQ
+        Console.WriteLine("Sorted Ascending with LINQ: " + string.Join(", ", numbers.OrderBy(n => n)));
+        Console.WriteLine("Sorted Descending with LINQ: " + string.Join(", ", numbers.OrderByDescending(n => n)));
+
+
+        // Waiting for a key press
+        Console.ReadKey();
+    }
+}
+
+
+Conclusion
+This lesson showed various methods to sort a List<int> in C#, ranging from the straightforward Sort method to more complex custom sorting logic. Understanding these sorting techniques is crucial for data manipulation and presentation in software development.
