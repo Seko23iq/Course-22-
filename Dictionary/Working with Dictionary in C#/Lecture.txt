@@ -1,0 +1,103 @@
+Working with Dictionary in C#
+In this lesson, we will explore the Dictionary<TKey, TValue> collection in C#. Dictionary is a collection of key-value pairs that provides fast retrieval based on the key. It is part of the System.Collections.Generic namespace and is widely used in situations where quick lookups are necessary.
+
+Objectives
+Understand how to perform common operations like adding, removing, and accessing elements.
+Explore practical examples of using a Dictionary.
+1. Introduction to Dictionary
+Key-Value Pairs: Stores data as pairs of keys and values. Each key must be unique.
+Fast Lookups: Provides very efficient retrieval of values based on keys.
+Generic Collection: Allows specifying types for both keys and values.
+2. Creating a Dictionary
+Example
+Dictionary<string, int> fruitBasket = new Dictionary<string, int>();
+
+This creates a dictionary where each key is a string (fruit name) and each value is an int (quantity of the fruit).
+
+3. Adding Elements
+Example
+fruitBasket.Add("Apple", 5);
+fruitBasket.Add("Banana", 2);
+fruitBasket.Add("Orange", 12);
+
+Adds pairs to the dictionary. The Add method throws an exception if a duplicate key is added.
+4. Accessing Elements
+Example
+int appleQuantity = fruitBasket["Apple"];
+
+Accesses the value associated with the key "Apple".
+5. Checking if a Key Exists
+Example
+if (fruitBasket.ContainsKey("Apple"))
+{
+    Console.WriteLine("Apple is in the basket.");
+}
+
+6. Updating Elements
+Example
+fruitBasket["Apple"] = 10; // Updates the value for the key "Apple"
+
+7. Removing Elements
+Example
+fruitBasket.Remove("Banana"); // Removes the key-value pair where the key is "Banana"
+
+
+8. Iterating Through a Dictionary
+Example
+foreach (KeyValuePair<string, int> item in fruitBasket)
+{
+    Console.WriteLine($"Fruit: {item.Key}, Quantity: {item.Value}");
+}
+
+9. Full Example Code
+Here's a complete example demonstrating the use of a Dictionary:
+
+using System;
+using System.Collections.Generic;
+
+
+class Program
+{
+    static void Main()
+    {
+        // Creating the dictionary
+        Dictionary<string, int> fruitBasket = new Dictionary<string, int>();
+
+
+        // Adding elements
+        fruitBasket.Add("Apple", 5);
+        fruitBasket.Add("Banana", 2);
+        //the following commented line will casue an error because they key is repeated.
+        //fruitBasket.Add("Banana", 5);
+        fruitBasket.Add("Orange", 12);
+
+
+        // Accessing and updating elements
+        fruitBasket["Apple"] = 10;
+
+
+        Console.WriteLine("\nDictionary Content:");
+        // Iterating through the dictionary
+        foreach (KeyValuePair<string, int> item in fruitBasket)
+        {
+            Console.WriteLine($"Fruit: {item.Key}, Quantity: {item.Value}");
+        }
+
+
+        // Removing an element
+        fruitBasket.Remove("Banana");
+
+        Console.WriteLine("\nDictionary Content after removing Banana:");
+        // Iterating through the dictionary after removing Banana
+        foreach (KeyValuePair<string, int> item in fruitBasket)
+        {
+            Console.WriteLine($"Fruit: {item.Key}, Quantity: {item.Value}");
+        }
+
+        Console.ReadKey();
+    }
+}
+
+
+Conclusion
+The Dictionary<TKey, TValue> in C# is a powerful and efficient collection for storing and retrieving data based on keys. It is essential in scenarios where quick data access and retrieval are critical.
