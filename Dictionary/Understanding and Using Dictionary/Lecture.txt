@@ -1,0 +1,12 @@
+Understanding and Using Dictionary in C#
+In this lesson, we will explore the Dictionary<TKey, TValue> collection in C#. Dictionary is a collection of key-value pairs that provides fast retrieval based on the key. It is part of the System.Collections.Generic namespace and is widely used in situations where quick lookups are necessary.
+
+Objectives
+Learn the basic concept of a Dictionary in C#.
+Introduction to Dictionary
+Key-Value Pairs: Stores data as pairs of keys and values. Each key must be unique.
+Fast Lookups: Provides very efficient retrieval of values based on keys.
+Generic Collection: Allows specifying types for both keys and values.
+Dictionary is like MAP in C++.
+Conclusion
+The Dictionary<TKey, TValue> in C# is a powerful and efficient collection for storing and retrieving data based on keys. It is essential in scenarios where quick data access and retrieval are critical.
