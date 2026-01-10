@@ -1,0 +1,43 @@
+Union Operation with HashSet<T> in C#
+Objective
+Learn to combine the elements of two sets using the UnionWith method in HashSet<T>.
+
+Full Program Example
+using System;
+using System.Collections.Generic;
+
+
+class Program
+{
+    static void Main()
+    {
+        HashSet<int> set1 = new HashSet<int> { 1, 2, 3 };
+        HashSet<int> set2 = new HashSet<int> { 3, 4, 5 };
+
+
+        // Union of set1 and set2
+        set1.UnionWith(set2);
+
+
+        Console.WriteLine("Union of sets:");
+        foreach (int item in set1)
+        {
+            Console.WriteLine(item);
+        }
+      Console.ReadKey();
+    }
+}
+
+
+Expected Output:
+
+Union of sets:
+1
+2
+3
+4
+5
+
+
+
+Output Explanation: The output shows all unique elements from both sets. The number 3, common to both sets, is listed only once, showcasing the unique element property of HashSet.
