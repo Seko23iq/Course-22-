@@ -1,0 +1,97 @@
+Advanced LINQ Usage with SortedList: Complex Object Operations
+Objective
+This lesson demonstrates how to use LINQ to filter, sort, and select data from a SortedList containing complex objects. The operations include filtering employees by department, sorting them by salary in descending order, and selecting their names for display.
+
+Step 1: Define the Employee Class
+We start with an Employee class that includes properties such as Name, Department, and Salary.
+
+public class Employee
+{
+    public string Name { get; set; }
+    public string Department { get; set; }
+    public decimal Salary { get; set; }
+
+
+    public Employee(string name, string department, decimal salary)
+    {
+        Name = name;
+        Department = department;
+        Salary = salary;
+    }
+}
+
+Step 2: Initialize the SortedList with Employee Data
+A SortedList is initialized with Employee objects, keyed by employee ID.
+
+SortedList<int, Employee> employees = new SortedList<int, Employee>()
+{
+    { 1, new Employee("Alice", "HR", 50000) },
+    { 2, new Employee("Bob", "IT", 70000) },
+    { 3, new Employee("Charlie", "HR", 52000) },
+    { 4, new Employee("Daisy", "IT", 80000) },
+    { 5, new Employee("Ethan", "Marketing", 45000) }
+};
+
+Step 3: Perform LINQ Operations
+LINQ is used to filter Employee objects by the "IT" department, sort them by salary in descending order, and select their names.
+
+var query = employees
+    .Where(e => e.Value.Department == "IT")
+    .OrderByDescending(e => e.Value.Salary)
+    .Select(e => e.Value.Name);
+
+Step 4: Display the Results
+The names of the filtered and sorted employees are printed.
+
+Console.WriteLine("IT Department Employees sorted by Salary (Descending):");
+foreach (var name in query)
+{
+    Console.WriteLine(name);
+}
+
+Complete Example with Expected Output
+The complete code combines all steps and outputs the names of employees in the "IT" department, sorted by their salaries in descending order.
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+
+
+public class Program
+{
+    public static void Main()
+    {
+        SortedList<int, Employee> employees = new SortedList<int, Employee>()
+        {
+            { 1, new Employee("Alice", "HR", 50000) },
+            { 2, new Employee("Bob", "IT", 70000) },
+            { 3, new Employee("Charlie", "HR", 52000) },
+            { 4, new Employee("Daisy", "IT", 80000) },
+            { 5, new Employee("Ethan", "Marketing", 45000) }
+        };
+
+
+        var query = employees
+            .Where(e => e.Value.Department == "IT")
+            .OrderByDescending(e => e.Value.Salary)
+            .Select(e => e.Value.Name);
+
+
+        Console.WriteLine("IT Department Employees sorted by Salary (Descending):");
+        foreach (var name in query)
+        {
+            Console.WriteLine(name);
+        }
+    }
+}
+
+
+Expected Output
+The execution of the above code will produce the following output, displaying the names of "IT" department employees sorted by their salary in descending order:
+
+IT Department Employees sorted by Salary (Descending):
+Daisy
+Bob
+
+Conclusion
+This lesson showed how to apply LINQ operations to a SortedList containing complex types to achieve filtering, sorting by a property other than the key, and selecting specific information. It demonstrates LINQ's versatility in processing and querying complex data structures efficiently.
