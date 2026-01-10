@@ -1,0 +1,40 @@
+Using IsSubsetOf with HashSet<T> in C#
+Objective
+Learn how to determine if a HashSet<T> is a subset of another collection using IsSubsetOf.
+
+Full Program Example
+using System;
+using System.Collections.Generic;
+
+
+
+
+class Program
+{
+    static void Main()
+    {
+        HashSet<int> set1 = new HashSet<int> { 1, 2 };
+        HashSet<int> set2 = new HashSet<int> { 1, 2, 3, 4, 5 };
+
+        Console.WriteLine("set1 is a subset of set2: " + set1.IsSubsetOf(set2));
+        Console.WriteLine("set2 is a subset of set1: " + set2.IsSubsetOf(set1));
+
+        Console.ReadKey();
+
+
+    }
+}
+
+
+
+
+
+Expected Output:
+
+set1 is a subset of set2: True
+set2 is a subset of set1: False
+
+
+Output Explanation: The output demonstrates that set1 is a subset of set2 because all elements of set1 are contained within set2
+
+While the other statement is not.
