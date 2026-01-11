@@ -1,0 +1,92 @@
+Working with ArrayList
+Objective: Learn how to use ArrayList for storing and manipulating collections of elements.
+
+Overview:
+
+ArrayList provides various methods for adding, removing, and accessing elements.
+It's suitable for scenarios where the size of the collection is not known in advance or needs to change dynamically.
+Key Points:
+
+Adding Elements: Use the Add() method to add elements to the end of the ArrayList.
+Accessing Elements: Elements can be accessed using indexers ([]) or by iterating through the collection.
+Removing Elements: Use the Remove() method to remove the first occurrence of a specific element, or RemoveAt() to remove an element at a specific index.
+Inserting Elements: Use the Insert() method to insert an element at a specific index.
+Sorting and Searching: ArrayList provides methods like Sort() and BinarySearch() for sorting and searching elements, respectively.
+Example:
+
+using System;
+using System.Collections;
+
+
+class Program
+{
+    static void Main(string[] args)
+    {
+        ArrayList list = new ArrayList();
+        list.Add(10);
+        list.Add(20);
+        list.Add(30);
+
+
+        Console.WriteLine("Elements in ArrayList:");
+        foreach (var item in list)
+        {
+            Console.WriteLine(item);
+        }
+
+
+        list.Remove(20); // Removing an element
+        Console.WriteLine("After removing an element:");
+        foreach (var item in list)
+        {
+            Console.WriteLine(item);
+        }
+       Console.ReadKey();
+    }
+}
+
+
+Exercise:
+
+Experiment with different methods of ArrayList, such as Insert(), Sort(), BinarySearch(), etc., to become familiar with their usage and behavior.
+These lessons should provide a comprehensive understanding of ArrayList in C# and how to effectively use it in your programs.
+
+Heterogeneous ArrayList Example:
+
+using System;
+using System.Collections;
+
+
+class Program
+{
+    static void Main(string[] args)
+    {
+        ArrayList list = new ArrayList(); // Creating an ArrayList
+        list.Add(10); // Adding elements
+        list.Add("Hello");
+        list.Add(true);
+
+
+        Console.WriteLine("Total elements in ArrayList: " + list.Count);
+
+
+        Console.WriteLine("Content of ArrayList using index:");
+        for (int i = 0; i < list.Count; i++)
+        {
+            Console.WriteLine("Index " + i + ": " + list[i]);
+        }
+
+
+        Console.ReadKey();
+    }
+}
+
+Output:
+
+Total elements in ArrayList: 3
+Content of ArrayList using index:
+Index 0: 10
+Index 1: Hello
+Index 2: True
+
+In this example the for loop iterates through each element in the ArrayList using index-based access (list[i]) and prints the index along with the corresponding element. This allows you to see the content of the ArrayList in the order it was added.
