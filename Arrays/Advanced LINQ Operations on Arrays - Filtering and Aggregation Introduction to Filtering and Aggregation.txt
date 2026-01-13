@@ -1,0 +1,51 @@
+Advanced LINQ Operations on Arrays - Filtering and Aggregation
+Introduction to Filtering and Aggregation
+In this lesson, we'll explore how to use LINQ to perform advanced filtering and aggregation on array data. These operations are key for data analysis and transformation in C#.
+
+Concepts
+Filtering: Selecting elements based on a condition.
+Aggregation: Summarizing data, such as calculating averages or totals.
+Example Program: Filtering and Aggregating Data
+using System;
+using System.Linq;
+
+
+class AdvancedLINQFilteringAndAggregation
+{
+    static void Main()
+    {
+        // Array of numbers
+        int[] numbers = { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
+
+
+        // Filtering to get only even numbers
+        var evenNumbers = numbers.Where(n => n % 2 == 0);
+
+
+        // Aggregating - calculating the sum of even numbers
+        int sumOfEvenNumbers = evenNumbers.Sum();
+
+
+        // Displaying the results
+        Console.WriteLine("Even Numbers:");
+        foreach (var num in evenNumbers)
+        {
+            Console.Write(num + " ");
+        }
+        Console.WriteLine($"\nSum of Even Numbers: {sumOfEvenNumbers}");
+       Console.ReadKey();
+    }
+}
+
+
+Expected Output and Explanation
+Even Numbers:
+2 4 6 8 10 
+Sum of Even Numbers: 30
+
+
+Filtering: numbers.Where(n => n % 2 == 0) filters the array to include only even numbers.
+Aggregation: evenNumbers.Sum() calculates the sum of the filtered even numbers.
+Displaying Results: The program first prints all even numbers and then shows their sum.
+Conclusion
+Filtering and aggregation are powerful tools in LINQ for analyzing and summarizing data. This example demonstrates how to use these techniques to extract specific information from an array and perform calculations.
