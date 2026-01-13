@@ -1,0 +1,40 @@
+Copying Arrays in C#
+Introduction to Array Copying
+Copying arrays in C# is a common task that involves creating a duplicate of an existing array.
+
+Concepts
+Array.Copy: A method to copy elements from one array to another.
+Shallow Copy: Only references are copied if the array contains objects.
+Example Program: Copying an Array
+using System;
+
+
+class ArrayCopyingExample
+{
+    static void Main()
+    {
+        // Original array
+        int[] original = { 1, 2, 3, 4, 5 };
+
+
+        // Array to hold the copy
+        int[] copy = new int[5];
+
+
+        // Copying array
+        Array.Copy(original, copy, original.Length);
+
+
+        // Displaying the copied array
+        Console.WriteLine("Copied Array:");
+        foreach (int element in copy)
+        {
+            Console.WriteLine(element);
+        }
+       Console.ReadKey();
+    }
+}
+
+
+Conclusion
+Copying arrays is a fundamental operation in C#, particularly when you need to manipulate or process data without altering the original array.
