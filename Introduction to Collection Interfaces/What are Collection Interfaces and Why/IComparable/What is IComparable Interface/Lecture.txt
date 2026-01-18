@@ -1,0 +1,17 @@
+What is IComparable?
+
+Introduction
+In C# and the .NET Framework, ordering and sorting objects based on specific criteria is a common requirement across various programming scenarios. The IComparable interface plays a pivotal role in this context, enabling objects to be compared to each other and sorted accordingly. This lesson focuses on the IComparable interface, explaining its purpose, how to implement it, and its significance in ensuring custom objects can be compared and ordered effectively.
+
+Objectives
+By the end of this lesson you will Understand the IComparable interface and its role in object comparison.
+
+What is IComparable?
+Definition
+IComparable is an interface defined in the System namespace that provides a method for comparing an instance of a class to another instance of the same class.
+
+Purpose
+The primary purpose of IComparable is to provide a standard way to compare objects, allowing them to be ordered or sorted based on a specific field or property. This is especially useful when working with collections that need to be sorted or when determining the position of an object relative to others in a list.
+
+Conclusion
+The IComparable interface is essential for defining how objects are compared and sorted within collections in C#. By implementing IComparable, developers gain fine-grained control over the order of their custom objects, facilitating efficient sorting and ordering operations based on custom criteria.
