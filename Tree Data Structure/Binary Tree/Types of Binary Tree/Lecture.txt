@@ -1,0 +1,64 @@
+Types of Binary Tree:
+There are several types of binary trees, each with its own specific characteristics. Here are some commonly known types of binary trees along with visual examples:
+
+Full Binary Tree:
+A full binary tree is a binary tree where every node has either 0 or 2 children. In other words, all nodes except the leaf nodes have two children.
+
+Example:
+
+          1
+       /     \
+      2       3
+     / \     / \
+    4   5   6   7
+
+
+Complete Binary Tree:
+A complete binary tree is a binary tree in which all levels, except possibly the last, are completely filled, and all nodes are as left as possible.
+
+Example:
+
+          1
+       /     \
+      2       3
+     / \     /
+    4   5   6
+
+
+Perfect Binary Tree:
+A perfect binary tree is a binary tree in which all levels are completely filled with nodes. This means that all leaf nodes are at the same level, and the number of nodes at each level is a power of 2.
+
+Example:
+
+          1
+       /     \
+      2       3
+     / \     / \
+    4   5   6   7
+
+
+Balanced Binary Tree:
+A balanced binary tree is a binary tree in which the height of the left and right subtrees of any node differs by at most one.
+
+Example:
+
+          1
+       /     \
+      2       3
+     / \       \
+    4   5       7
+
+
+Degenerate/Binary Search Tree:
+A degenerate or pathological binary tree is a binary tree in which each parent node has only one associated child node. Essentially, it's a tree that resembles a linked list.
+
+Example:
+
+          1
+           \
+            2
+             \
+              3
+               \
+                4
+These are just a few examples of different types of binary trees. Binary trees can have various shapes and structures depending on their characteristics and how the nodes are arranged.
