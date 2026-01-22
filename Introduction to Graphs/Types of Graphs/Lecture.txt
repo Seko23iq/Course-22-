@@ -1,0 +1,26 @@
+Types of Graphs
+1- Undirected Graph:
+
+Edges have no direction, meaning the relationship is two-way. For example, a friendship in a social network.
+Example: If an edge connects vertices A and B, it means you can go from A to B and B to A.
+2- Directed Graph (Digraph):
+
+Edges have direction, indicating a one-way relationship. These edges are often represented by arrows.
+Example: A one-way road between two locations, or the "follows" relationship in social media.
+Degree: The number of edges connected to a vertex. In directed graphs, there are:
+In-degree: Number of incoming edges to a vertex.
+Out-degree: Number of outgoing edges from a vertex.
+3- Weighted Graph:
+
+Each edge has an associated weight or cost.
+Example: In a map, the edges represent roads, and the weights represent distances.
+4- Unweighted Graph:
+
+All edges have the same weight (often implicitly set to 1).
+
+5- Cyclic and Acyclic Graphs:
+
+Cyclic Graph: Contains at least one cycle (a path that starts and ends at the same vertex).
+Acyclic Graph: Contains no cycles. A special type of acyclic graph is a tree.
+
+
