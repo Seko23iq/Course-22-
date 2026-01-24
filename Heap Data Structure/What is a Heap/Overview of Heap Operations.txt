@@ -1,0 +1,9 @@
+Overview of Heap Operations
+Overview of Heap Operations
+The main operations in a Min-Heap are:
+
+Insert: Add a new element while maintaining the heap property.
+HeapifyUp: Helper method to maintain the heap property after insertions.
+Peek: Get the smallest element without removing it.
+ExtractMin: Remove and return the smallest element (root) while preserving the heap structure.
+HeapifyDown: Helper method to maintain the heap property after deletions.
