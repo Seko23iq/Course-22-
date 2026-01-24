@@ -1,0 +1,16 @@
+Min-Heap: Peek Operation
+Peek Operation
+The Peek operation returns the smallest element in a Min-Heap without removing it. Since the smallest element is always at the root in a Min-Heap, Peek simply returns the root value without deleting it.
+
+Code Example for Peek Operation:
+    // Peek the minimum element without removing it
+    public int Peek()
+    {
+        if (heap.Count == 0)
+        {
+            throw new InvalidOperationException("Heap is empty.");
+        }
+
+        return heap[0]; // The smallest element is at the root
+    }
+

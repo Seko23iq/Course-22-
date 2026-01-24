@@ -1,0 +1,9 @@
+# Visual Studio Temporary Files
+.vs/
+obj/
+bin/
+*.user
+*.suo
+*.pdb
+*.exe
+*.dll
