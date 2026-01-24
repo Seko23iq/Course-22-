@@ -1,0 +1,11 @@
+Postorder Tree Traversal
+Postorder traversal is a technique to visit all the nodes in a tree data structure in a specific sequence: first the left subtree, then the right subtree, and finally the current node (root).
+
+
+What is Postorder Traversal?
+In postorder traversal, a binary tree is traversed in the following order:
+
+Traverse the left subtree in postorder.
+Traverse the right subtree in postorder.
+Visit the root node.
+Postorder traversal is especially useful in scenarios where you need to visit child nodes before their parents, such as when calculating the size or depth of a tree, or when performing certain cleanup or evaluation tasks that require child nodes to be processed first.

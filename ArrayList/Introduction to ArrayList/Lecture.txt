@@ -1,0 +1,12 @@
+Introduction to ArrayList
+Overview:
+
+ArrayList is a dynamic array that can hold elements of any data type.
+It's part of the System.Collections namespace.
+Unlike arrays, ArrayList can grow dynamically as elements are added, but it does not automatically decrease its capacity when elements are removed.
+Key Points:
+
+Dynamic Sizing: Unlike arrays, ArrayList automatically increases its size as elements are added. However, it does not automatically decrease its capacity when elements are removed.
+Heterogeneous Collection: ArrayList can hold elements of different data types. This flexibility allows for the storage of different types of objects within the same collection.
+Methods and Properties: ArrayList provides various methods and properties to manipulate and access elements, such as Add(), Remove(), Insert(), Count, and Capacity.
+Memory Management: Although ArrayList does not automatically decrease its capacity when elements are removed, you can use the TrimToSize() method to reduce the capacity to match the number of elements stored in the list.

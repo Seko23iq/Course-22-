@@ -1,0 +1,33 @@
+Using SetEquals with HashSet<T> in C#
+Objective
+Learn to determine if two HashSet<T> instances contain the same elements using SetEquals.
+
+Full Program Example
+using System;
+using System.Collections.Generic;
+
+
+class Program
+{
+    static void Main()
+    {
+        HashSet<int> set1 = new HashSet<int> { 1, 2, 3 };
+        HashSet<int> set2 = new HashSet<int> { 1, 2, 3 };
+        HashSet<int> set3 = new HashSet<int> { 3, 4, 5 };
+
+
+        Console.WriteLine("set1 equals set2: " + set1.SetEquals(set2));
+        Console.WriteLine("set1 equals set3: " + set1.SetEquals(set3));
+        Console.ReadKey();
+    }
+}
+
+
+
+Expected Output:
+
+set1 equals set2: True
+set1 equals set3: False
+
+
+Output Explanation: This output shows that set1 is equal to set2 as they contain the same elements. However, set1 and set3 are not equal as they have different elements.

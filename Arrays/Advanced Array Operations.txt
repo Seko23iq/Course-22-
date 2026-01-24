@@ -1,0 +1,42 @@
+Advanced Array Operations in C#
+Advanced Operations on Arrays
+Advanced operations extend the functionality of arrays, enabling sorting, searching, and working with multidimensional arrays.
+
+Operations Covered
+Sorting
+Searching
+
+Example Program: Advanced Operations on Arrays
+using System;
+
+
+class AdvancedArrayOperations
+{
+    static void Main()
+    {
+        // Initializing an array
+        int[] numbers = { 5, 3, 1, 4, 2 };
+
+
+        // Sorting the array
+        Array.Sort(numbers);
+
+
+        // Display the sorted array
+        Console.WriteLine("Sorted array:");
+        foreach (int number in numbers)
+        {
+            Console.WriteLine(number);
+        }
+
+
+        // Searching for an element, this will return the index for the element you searched for.
+        int index = Array.IndexOf(numbers, 4);
+        Console.WriteLine("\nIndex of 4: " + index);
+       Console.ReadKey();
+    }
+}
+
+
+Conclusion
+This lesson explores advanced operations on arrays in C#, including sorting, searching, and resizing. These operations are crucial for handling complex data structures and scenarios in C# programming.

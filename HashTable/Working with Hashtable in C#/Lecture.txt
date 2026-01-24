@@ -1,0 +1,93 @@
+Working with Hashtable in C#
+
+Basic Operations
+Creating and Populating
+
+
+To use a Hashtable, start by adding using System.Collections; at the beginning of your file. Here's how to declare and populate it:
+
+Hashtable myHashtable = new Hashtable();
+myHashtable.Add("key1", "value1");
+myHashtable.Add("key2", 100); // Mixed value types allowed
+myHashtable.Add("key1", "value3");
+
+Accessing Elements
+Retrieve elements using their keys, remembering to cast the result:
+
+string value = (string)myHashtable["key1"];
+Console.WriteLine(value); // Expected: value1
+
+Modifying and Removing
+Change values directly or remove them with Remove:
+
+myHashtable["key1"] = "newValue1"; // Update
+myHashtable.Remove("key2"); // Delete
+
+
+Iteration
+Loop over the collection with foreach:
+
+foreach (DictionaryEntry entry in myHashtable)
+{
+    Console.WriteLine($"Key: {entry.Key}, Value: {entry.Value}");
+}
+
+
+Complete Example with Expected Output
+Now, let's combine these operations into a full example:
+
+using System;
+using System.Collections;
+
+
+class Program
+{
+    static void Main()
+    {
+        // Initialization
+        Hashtable myHashtable = new Hashtable();
+        myHashtable.Add("key1", "value1");
+        myHashtable.Add("key2", "value2");
+        myHashtable.Add("key3", "value3");
+
+
+
+
+        // Accessing an element
+        Console.WriteLine($"Accessing key1: {myHashtable["key1"]}");
+
+
+        // Modifying an element
+        myHashtable["key1"] = "newValue1";
+
+
+        // Removing an element
+        myHashtable.Remove("key2");
+
+
+        // Iterating over elements
+        Console.WriteLine("\nCurrent Hashtable contents:");
+        foreach (DictionaryEntry entry in myHashtable)
+        {
+            Console.WriteLine($"Key: {entry.Key}, Value: {entry.Value}");
+        }
+        Console.ReadKey();
+
+    }
+}
+
+
+Expected Output
+Running the complete example above will produce the following output, demonstrating the Hashtable operations in action:
+
+Accessing key1: value1
+
+Current Hashtable contents:
+Key: key3, Value: Value3
+Key: key1, Value: newValue1
+
+
+Note that "key2" and its associated value are not printed since they were removed from the Hashtable.
+
+Conclusion
+Hashtable is a powerful, if somewhat dated, collection type in C# that excels in scenarios requiring quick access to elements by key. While newer, generic collections like Dictionary<TKey, TValue> offer type safety and potentially better performance, understanding how to use Hashtable is still valuable, especially for working with legacy code or APIs that require it. This lesson has equipped you with the knowledge to utilize Hashtable effectively in your C# applications.

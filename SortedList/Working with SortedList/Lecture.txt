@@ -1,0 +1,109 @@
+Working with SortedList in C#
+
+
+The SortedList is a collection that stores key-value pairs, sorted by the key. It is part of the System.Collections (non-generic) and System.Collections.Generic namespaces in C#.
+
+Understanding how to use SortedList is important for scenarios where you need a dictionary-like collection with sorting by default.
+
+Objectives
+Learn how to perform basic operations such as adding, removing, and accessing elements in a SortedList.
+Explore the differences between the generic and non-generic versions of SortedList.
+1. Characteristics of SortedList
+Automatically Sorted: The elements in a SortedList are sorted by the key as soon as they are added.
+Key-Value Pairs: Similar to a dictionary, it stores elements as key-value pairs.
+Unique Keys: Keys must be unique, and an exception is thrown if a duplicate key is added.
+2. Creating a SortedList
+Non-Generic SortedList
+var sortedList = new SortedList();
+
+Generic SortedList
+var sortedListGeneric = new SortedList<string, int>();
+
+
+3. Adding Elements
+Non-Generic
+sortedList.Add("apple", 3);
+sortedList.Add("Orange", 3);
+sortedList.Add("banana", 2);
+
+Generic
+sortedListGeneric.Add("apple", 3);
+sortedList.Add("Orange", 3);
+sortedListGeneric.Add("banana", 2);
+
+4. Accessing Elements
+Elements can be accessed by their key.
+Example
+int appleQuantity = (int)sortedList["apple"]; // For non-generic
+int bananaQuantity = sortedListGeneric["banana"]; // For generic
+
+5. Iterating through a SortedList
+You can use foreach to iterate through a SortedList.
+Example
+foreach (DictionaryEntry item in sortedList) // Non-generic
+{
+    Console.WriteLine($"Key: {item.Key}, Value: {item.Value}");
+}
+
+
+foreach (var item in sortedListGeneric) // Generic
+{
+    Console.WriteLine($"Key: {item.Key}, Value: {item.Value}");
+}
+
+
+6. Removing Elements
+Example
+sortedList.Remove("apple"); // Non-generic
+sortedListGeneric.Remove("banana"); // Generic
+
+
+7. Full Example Code
+Here's a full example using the generic SortedList<TKey, TValue>:
+
+using System;
+using System.Collections.Generic;
+
+
+class Program
+{
+    static void Main()
+    {
+        var sortedList = new SortedList<string, int>();
+
+
+        // Adding elements
+      
+        sortedList.Add("banana", 2);
+        sortedList.Add("Orange", 3);
+        sortedList.Add("apple", 3);
+
+        // Accessing elements
+        Console.WriteLine("\nQuantity of apples: " + sortedList["apple"]);
+
+
+        Console.WriteLine("\nIterating SortedList Elements:");
+        // Iterating through elements
+        foreach (var item in sortedList)
+        {
+            Console.WriteLine($"Key: {item.Key}, Value: {item.Value}");
+        }
+
+
+        // Removing an element
+        sortedList.Remove("apple");
+
+        Console.WriteLine("\nSortedList Elements removing apple:");
+
+        foreach (var item in sortedList)
+        {
+            Console.WriteLine($"Key: {item.Key}, Value: {item.Value}");
+        }
+
+
+        Console.ReadKey();
+    }
+}
+
+Conclusion
+SortedList in C# is a useful collection for scenarios where automatic sorting of elements is required. Understanding when to use SortedList over other collections like Dictionary or List is crucial for efficient data management in your applications.

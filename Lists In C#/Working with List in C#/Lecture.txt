@@ -1,0 +1,60 @@
+Working with List<int> in C#
+In this lesson, we will explore how to use List<int> in C# through a practical and annotated example. The List<int> is a powerful, flexible, and dynamic collection that can store a list of integers and provides various methods for manipulating these integers.
+
+Below is the complete code for a simple C# console application, with inline comments explaining each part of the code.
+
+Full Code with Explanations
+using System;
+using System.Collections.Generic;
+
+
+internal class Program
+{
+    static void Main(string[] args)
+    {
+        // Creating a new List of integers
+        List<int> numbers = new List<int>();
+
+
+        // Adding elements to the list
+        numbers.Add(1); // Add 1 to the list
+        numbers.Add(2); // Add 2 to the list
+        numbers.Add(3); // Add 3 to the list
+        numbers.Add(4); // Add 4 to the list
+        numbers.Add(5); // Add 5 to the list
+
+
+        // Displaying the total number of elements in the list
+        Console.WriteLine("Number of items in the list: " + numbers.Count);
+
+
+        // Accessing and displaying each element in the list
+        Console.WriteLine(numbers[0]); // Displays the first element (1)
+        Console.WriteLine(numbers[1]); // Displays the second element (2)
+        Console.WriteLine(numbers[2]); // Displays the third element (3)
+        Console.WriteLine(numbers[3]); // Displays the fourth element (4)
+        Console.WriteLine(numbers[4]); // Displays the fifth element (5)
+
+
+        // Modifying an element in the list
+        Console.WriteLine("Changing the value of item 2 of the list to 500:");
+        numbers[1] = 500; // Change the value of the second element to 500
+        Console.WriteLine(numbers[1]); // Displays the new value of the second element (500)
+
+
+        // Waiting for a key press before closing the console window
+        Console.ReadKey();
+    }
+}
+
+
+Key Concepts Illustrated in the Code
+Initialization: A List<int> named numbers is created to store integers.
+Adding Elements: The Add method is used to add integers to the list.
+Count Property: The Count property is used to get the total number of elements in the list.
+Index-Based Access: Elements in the list are accessed using their indices.
+Modifying Elements: The value of an element at a specific index is modified.
+Console Output: Console.WriteLine is used to print information to the console.
+Pause Execution: Console.ReadKey is used to pause the program's execution until a key is pressed.
+Conclusion
+This lesson demonstrates the basics of using List<int> in C#. Understanding how to create lists, add items, access and modify elements, and utilize properties like Count are fundamental skills for working with collections in C#.

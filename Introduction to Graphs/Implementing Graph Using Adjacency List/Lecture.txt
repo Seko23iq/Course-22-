@@ -1,0 +1,18 @@
+Key Features of the Code:
+This C# code implements a graph data structure using an adjacency list. The graph can be directed or undirected, and edges can have weights. Here's a breakdown of the code:
+
+Graph Representation:
+The graph is represented by a dictionary (_adjacencyList), where each vertex is associated with a list of tuples. Each tuple represents an edge, containing the destination vertex and the weight of the edge.
+The graph type (directed or undirected) is defined by an enum enGraphDirectionType.
+Another dictionary (_vertexDictionary) maps vertex labels (strings) to their indices for efficient access.
+Constructor:
+The constructor initializes the graph based on a list of vertices and the type of the graph (directed or undirected). It sets up the adjacency list and the vertex mapping.
+Adding and Removing Edges:
+The AddEdge method adds a weighted edge between two vertices. If the graph is undirected, the reverse edge (from destination to source) is also added.
+The RemoveEdge method removes an edge between two vertices. For undirected graphs, it removes both the forward and reverse edges.
+Graph Operations:
+DisplayGraph prints the adjacency list representation of the graph.
+IsEdge checks if there is an edge between two vertices.
+GetInDegree and GetOutDegree return the in-degree (number of incoming edges) and out-degree (number of outgoing edges) for a vertex.
+Main Method:
+The Main method creates three different graphs (undirected, directed, and weighted), adds edges, displays the graphs, and performs various operations like calculating in-degree, out-degree, checking edges, and removing edges.

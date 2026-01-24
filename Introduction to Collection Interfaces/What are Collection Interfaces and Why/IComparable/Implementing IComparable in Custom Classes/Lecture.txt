@@ -1,0 +1,119 @@
+Implementing IComparable in Custom Classes
+Implementing IComparable in a custom class allows you to define how instances of that class are compared to each other, based on any criteria you deem relevant.
+
+Example: A Custom Person Class
+Consider a Person class where you want to compare instances based on the person's age. By implementing IComparable, you can define a standard way to compare Person instances:
+
+using System;
+
+
+public class Person : IComparable<Person>
+{
+    public string Name { get; set; }
+    public int Age { get; set; }
+
+
+    public int CompareTo(Person other)
+    {
+        if (other == null) return 1;
+
+        return this.Age.CompareTo(other.Age);
+    }
+}
+
+
+In this example, CompareTo uses the Age property to determine the order of Person instances. The method returns a negative value if the current instance precedes other in the sort order, zero if they are equal, and a positive value if the current instance follows other.
+
+Using IComparable in Sorting
+With IComparable implemented, objects of the custom class can be sorted using methods like Array.Sort or List.Sort. This makes it straightforward to order collections of custom objects without needing a separate comparator.
+
+List<Person> people = new List<Person>
+{
+    new Person { Name = "John", Age = 30 },
+    new Person { Name = "Jane", Age = 25 },
+    new Person { Name = "Doe", Age = 28 },
+};
+
+
+people.Sort();
+
+
+After calling Sort, the people list will be ordered by age, thanks to the CompareTo implementation in the Person class.
+
+Full Program:
+using System;
+using System.Collections.Generic;
+
+
+public class Person : IComparable<Person>
+{
+    public string Name { get; set; }
+    public int Age { get; set; }
+
+
+    // Implementing the CompareTo method for Person class
+    public int CompareTo(Person other)
+    {
+        // If other is not a valid object reference, this instance is greater.
+        if (other == null) return 1;
+
+
+        // Use the Age property to determine the order of Person instances.
+        return this.Age.CompareTo(other.Age);
+    }
+
+
+    // Constructor for easier initialization
+    public Person(string name, int age)
+    {
+        Name = name;
+        Age = age;
+    }
+
+
+    // Override ToString to make output easier to read
+    public override string ToString()
+    {
+        return $"{Name}, {Age} years old";
+    }
+}
+
+
+class Program
+{
+    static void Main(string[] args)
+    {
+        // Creating a list of Person instances
+        List<Person> people = new List<Person>
+        {
+            new Person("John", 30),
+            new Person("Jane", 25),
+            new Person("Doe", 28),
+        };
+
+
+        // Sorting the list using IComparable implementation
+        people.Sort();
+
+
+        // Printing the sorted list
+        Console.WriteLine("People sorted by age:");
+        foreach (Person person in people)
+        {
+            Console.WriteLine(person.ToString());
+        }
+   Console.ReadKey();
+    }
+}
+
+
+This program will output:
+
+People sorted by age:
+Jane, 25 years old
+Doe, 28 years old
+John, 30 years old
+
+
+
+In this example, the Person class implements the IComparable<Person> interface to compare Person instances based on their Age. The CompareTo method is overridden to provide this comparison logic. We then create a list of Person objects, sort them using the Sort method (which internally uses the CompareTo method), and print the sorted list to the console. This demonstrates how implementing IComparable affects the sorting and ordering of custom objects, allowing for custom criteria (in this case, age) to be used for sorting.
