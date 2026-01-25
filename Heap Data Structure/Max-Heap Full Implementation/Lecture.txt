@@ -1,0 +1,14 @@
+  Max-Heap Full Implementation
+To convert Min-Heap code into a Max-Heap, we need to make adjustments to ensure the Max-Heap property: in a Max-Heap, each parent node must be greater than or equal to its children.
+
+This involves modifying the comparisons in HeapifyUp and HeapifyDown to enforce that larger values rise to the top of the heap. We’ll also rename the class and methods to reflect that it’s a Max-Heap.
+
+Key Changes for Max-Heap
+HeapifyUp:
+Changed the comparison from heap[index] >= heap[parentIndex] to heap[index] <= heap[parentIndex].
+Swaps occur if heap[index] is greater than heap[parentIndex] to maintain the Max-Heap property.
+HeapifyDown:
+Changed the logic to ensure the parent node is always greater than or equal to its children.
+Checks whether the left or right child is greater than the current element and swaps with the larger child to restore the Max-Heap property.
+Method Names: Renamed MinHeap to MaxHeap and ExtractMin to ExtractMax.
+With these modifications, the code now functions as a Max-Heap, where the largest element is always at the root, and each parent node is greater than or equal to its children.
