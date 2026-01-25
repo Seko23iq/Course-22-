@@ -1,0 +1,11 @@
+What is a Priority Queue?
+A Priority Queue is a type of data structure where each element is associated with a "priority" level. Elements are processed based on their priority, not just their order of insertion. In a Min-Heap-based Priority Queue, the element with the lowest priority value is served first.
+
+Key Properties:
+Min-Priority Queue: The element with the lowest priority is served first.
+Max-Priority Queue: The element with the highest priority is served first.
+Why Use a Min-Heap for a Priority Queue?
+A Min-Heap is well-suited for a priority queue because:
+
+Efficient Access: The smallest element (root) can be accessed in constant time.
+Efficient Insert and Remove: Insertions and deletions take O(log n) time, making it efficient for dynamic datasets.
